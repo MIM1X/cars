@@ -1,8 +1,8 @@
-const url = 'https://ofc-test-01.tspb.su/test-task/vehicles';
+import API_URL from './constants';
 
 const fetchVehicles = async () => {
   try {
-    const response = await fetch(url);
+    const response = await fetch(API_URL);
     if (!response.ok) {
       throw new Error('Сетевая ошибка');
     }
@@ -14,4 +14,4 @@ const fetchVehicles = async () => {
   }
 };
 
-export default fetchVehicles;
+export const vehiclesArray = await fetchVehicles();
