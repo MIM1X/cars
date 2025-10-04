@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import EditModal from '../editModal/editModal';
+import SortButtons from '../ui/sortButtons/sortButtons';
 import { updateVehicle } from '../../services/crudUtils';
 
 function List({ cars, setCars }) {
@@ -38,60 +39,24 @@ function List({ cars, setCars }) {
             <th>Модель</th>
             <th>
               <div
-                style={{ display: 'flex', alignItems: 'center', gap: '4px' }}
+                style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
               >
                 <span>Год</span>
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '2px',
-                  }}
-                >
-                  <button
-                    type='button'
-                    onClick={() => handleSort('year', 'asc')}
-                    title='Сортировать по возрастанию'
-                  >
-                    ▲
-                  </button>
-                  <button
-                    type='button'
-                    onClick={() => handleSort('year', 'desc')}
-                    title='Сортировать по убыванию'
-                  >
-                    ▼
-                  </button>
-                </div>
+                <SortButtons
+                  onSortAsc={() => handleSort('year', 'asc')}
+                  onSortDesc={() => handleSort('year', 'desc')}
+                />
               </div>
             </th>
             <th>
               <div
-                style={{ display: 'flex', alignItems: 'center', gap: '4px' }}
+                style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
               >
                 <span>Цена</span>
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '2px',
-                  }}
-                >
-                  <button
-                    type='button'
-                    onClick={() => handleSort('price', 'asc')}
-                    title='Сортировать по возрастанию'
-                  >
-                    ▲
-                  </button>
-                  <button
-                    type='button'
-                    onClick={() => handleSort('price', 'desc')}
-                    title='Сортировать по убыванию'
-                  >
-                    ▼
-                  </button>
-                </div>
+                <SortButtons
+                  onSortAsc={() => handleSort('price', 'asc')}
+                  onSortDesc={() => handleSort('price', 'desc')}
+                />
               </div>
             </th>
             <th>Действия</th>
