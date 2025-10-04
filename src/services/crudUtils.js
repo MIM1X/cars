@@ -1,13 +1,7 @@
 import { vehiclesArray } from './fetchVehicles';
 
-const createVehicle = (name, model, year, color, price) => {
-  const id =
-    vehiclesArray.length > 0
-      ? vehiclesArray[vehiclesArray.length - 1].id + 1
-      : 1;
-  const vehicle = { id, name, model, year, color, price };
-  vehiclesArray.push(vehicle);
-  return vehicle;
+const createVehicle = (id, name, model, year, color, price) => {
+  return { id, name, model, year, color, price };
 };
 
 const readVehicle = (id) => {
